@@ -1,0 +1,57 @@
+<div class="row">
+    <form>
+        <div class="small-12 large-4 columns">
+            <label>Name
+                    <input type="text" placeholder="Name Contains" ng-model="searchName">
+                </label>
+        </div>
+        <div class="small-12 large-4 columns">
+            <label>School
+                    <input type="text" placeholder="School Contains" ng-model="searchSchool">
+                </label>
+        </div>
+        <div class="small-12 large-4 columns">
+            <label>Descriptor
+                    <input type="text" placeholder="Descriptor Contains" ng-model="searchDescriptor">
+                </label>
+        </div>
+        <div class="small-12 large-12 columns">
+            <input type="submit" class="button" value="Search" ng-click="search()">
+        </div>
+    </form>
+</div>
+<div class="row loading" ng-show="loading">
+    <div class="small-12 columns">
+        <img src="images/loading_gray.gif" alt="Loading" />
+    </div>
+</div>
+<div class="row small-up-1 medium-up-2 large-up-3 xlarge-up-4" ng-hide="loading || spell.name" data-equalizer data-equalize-by-row="true">
+    <div class="small-12 medium-6 large-4 columns" ng-repeat="s in spells">
+        <div class="monster clickable" data-equalizer-watch ng-click="selectSpell(s)">
+            <div class="heading ">
+                <p class="alignleft ">{{s.name}}</p>
+                <div style="clear: both; "></div>
+            </div>
+            <div>
+                <h5>
+                    <b>School:</b> {{s.school}} <span ng-show="s.descriptor">[{{s.descriptor}}]</span>
+                </h5>
+                <h5><b>Level:</b> {{s.spell_level}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" ng-show="spell.name">
+    <div class="small-12 columns ">
+        <div class="monster">
+            <button class="close-button" aria-label="Close alert" type="button" ng-click="clearSpell()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="row " ng-show="spells.length===0 ">
+    <div class="small-12 columns ">
+        There are no results matching your search criteria.
+    </div>
+</div>

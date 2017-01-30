@@ -1,0 +1,136 @@
+<div class="row">
+    <form>
+        <div class="small-12 large-4 columns">
+            <label>Name
+                    <input type="text" placeholder="Name Contains" ng-model="searchName">
+                </label>
+        </div>
+        <div class="small-12 large-4 columns">
+            <label>Environment
+                    <input type="text" placeholder="Environment Contains" ng-model="searchEnv">
+                </label>
+        </div>
+        <div class="small-12 large-4 columns">
+            <label>Challenge Rating
+                    <input type="text" placeholder="Challenge Rating Equals" ng-model="searchCR">
+                </label>
+        </div>
+        <div class="small-12 large-12 columns">
+            <input type="submit" class="button" value="Search" ng-click="search()">
+        </div>
+    </form>
+</div>
+<div class="row loading" ng-show="loading">
+    <div class="small-12 columns">
+        <img src="images/loading_gray.gif" alt="Loading" />
+    </div>
+</div>
+<div class="row small-up-1 medium-up-2 large-up-3 xlarge-up-4" ng-hide="loading || monster.Name" data-equalizer data-equalize-by-row="true">
+    <div class="small-12 medium-6 large-4 columns" ng-repeat="m in monsters">
+        <div class="monster clickable" data-equalizer-watch ng-click="selectMonster(m)">
+            <div class="heading ">
+                <p class="alignleft ">{{m.Name}}</p>
+                <p class="alignright ">CR {{m.CR}}</p>
+                <div style="clear: both; "></div>
+            </div>
+            <div>
+                <h3><i>{{m.Description_Visual}}</i></h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" ng-show="monster.Name">
+    <div class="small-12 columns ">
+        <div class="monster">
+            <button class="close-button" aria-label="Close alert" type="button" ng-click="clearMonster()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            <div>
+                <h2>{{monster.Name}}</h2>
+            </div>
+            <div>
+                <h5><b>CR </b>{{monster.CR}}; <b>XP </b>{{monster.XP}}</h5>
+                <h5>{{monster.Alignment}} {{monster.Size}} {{monster.Type}} {{monster.SubType}}</h5>
+                <h5><b>Init </b>+{{monster.Init}}; <b>Senses </b>{{monster.Senses}}</h5>
+                <h5 ng-show="monster.Aura "><b>Aura</b> {{monster.Aura}}</h5>
+            </div>
+            <div class="section-header ">
+                <h5>DEFENSE</h5>
+            </div>
+            <div>
+                <h5><b>AC </b>{{monster.AC}} {{monster.AC_Mods}}</h5>
+                <h5><b>HP </b>{{monster.HP}} {{monster.HD}} {{monster.HP_Mods}}</h5>
+                <h5><b>Fort </b>+{{monster.Fort}}, <b>Ref </b>+{{monster.Ref}}, <b>Will </b>+{{monster.Will}}</h5>
+                <h5 ng-show="monster.DR"><b>DR</b> {{monster.DR}}</h5>
+                <h5 ng-show="monster.Immune"><b>Immune </b>{{monster.Immune}}</h5>
+            </div>
+            <div class="section-header ">
+                <h5>OFFENSE</h5>
+            </div>
+            <div>
+                <h5><b>Spd </b>{{monster.Speed}}</h5>
+                <h5><b>Melee </b>{{monster.Melee}}</h5>
+                <h5><b>Space </b>{{monster.Space}}; <b>Reach </b>{{monster.Reach}}</h5>
+                <h5 ng-show="monster.SpecialAttacks"><b>Special Attacks </b>{{monster.SpecialAttacks}}</h5>
+            </div>
+            <div class="section-header ">
+                <h5>STATISTICS</h5>
+            </div>
+            <div>
+                <h5>{{monster.AbilityScores}}</h5>
+                <!--<h5><b>Str</b> 19, <b>Dex</b> 14, <b>Con</b> 17, <b>Int</b> 10, <b>Wis</b> 13, <b>Cha</b> 10</h5>-->
+                <h5><b>Base Atk </b>+{{monster.BaseAtk}}; <b>CMB </b>+{{monster.CMB}}; <b>CMD </b>{{monster.CMD}}</h5>
+                <h5><b>Feats </b>{{monster.Feats}}</h5>
+                <h5><b>Skills </b>{{monster.Skills}}</h5>
+                <h5><b>Languages </b>{{monster.Languages}}</h5>
+                <h5 ng-show="monster.SQ"><b>SQ </b>{{monster.SQ}}</h5>
+            </div>
+            <div class="section-header ">
+                <h5>ECOLOGY</h5>
+            </div>
+            <div>
+                <h5><b>Environment </b>{{monster.Environment}}</h5>
+                <h5><b>Organization </b>{{monster.Organization}}</h5>
+                <h5><b>Treasure </b>{{monster.Treasure}}</h5>
+            </div>
+            <div class="section-header " ng-show="monster.SpecialAbilities ">
+                <h5>SPECIAL ABILITIES</h5>
+            </div>
+            <div ng-show="monster.SpecialAbilities ">
+                <h5>
+                    {{monster.SpecialAbilities}}
+                </h5>
+            </div>
+            <div class="section-header " ng-show="monster.SpellLikeAbilities ">
+                <h5>SPELL LIKE ABILITIES</h5>
+            </div>
+            <div ng-show="monster.SpellLikeAbilities ">
+                <h5>
+                    {{monster.SpellLikeAbilities}}
+                </h5>
+            </div>
+            <div class="section-header " ng-show="monster.SpellsKnown ">
+                <h5>SPELLS KNOWN</h5>
+            </div>
+            <div ng-show="monster.SpellsKnown ">
+                <h5>
+                    {{monster.SpellsKnown}}
+                </h5>
+            </div>
+            <div class="section-header ">
+                <h5>DESCRIPTION</h5>
+            </div>
+            <div>
+                <h4>
+                    <p>{{monster.Description}}</p>
+                </h4>
+                <h5><b>Source</b> {{monster.Source}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row " ng-show="monsters.length===0 ">
+    <div class="small-12 columns ">
+        There are no results matching your search criteria.
+    </div>
+</div>
