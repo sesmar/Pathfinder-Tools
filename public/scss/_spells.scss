@@ -1,0 +1,47 @@
+div.spell {
+    background-color: #ECE5B3;
+    border: 1px solid #003A26;
+    margin-bottom: 1rem;
+    position: relative;
+    div {
+        padding: 0 1rem;
+        margin: 1rem 0;
+        h5 {
+            margin: 0;
+        }
+    }
+    div.heading {
+        margin-top: 0;
+        background-color: #003A26;
+        color: #ECE5B3;
+        text-transform: uppercase;
+        p {
+            font-size: 1rem;
+            margin: 0;
+        }
+        p.alignleft {
+            float: left;
+        }
+        p.alignright {
+            float: right;
+        }
+    }
+    div.section-header {
+        font-size: 1rem;
+        border-top: 1px solid rgb(0, 0, 0);
+        border-bottom: 1px solid rgb(0, 0, 0);
+        font-weight: bold;
+    }
+}
+
+div.loading {
+    img {
+        width: 350px;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+.clickable {
+    cursor: pointer;
+}
