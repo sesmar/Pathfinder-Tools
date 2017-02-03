@@ -37,6 +37,10 @@
                     <b>School:</b> {{s.school}} <span ng-show="s.descriptor">[{{s.descriptor}}]</span>
                 </h5>
                 <h5><b>Level:</b> {{s.spell_level}}</h5>
+                <div class="short-description" ng-show="s.short_description">
+                    <br/>
+                    <h5><i>{{s.short_description}}</i></h5>
+                </div>
             </div>
         </div>
     </div>
@@ -47,7 +51,37 @@
             <button class="close-button" aria-label="Close alert" type="button" ng-click="clearSpell()">
                 <span aria-hidden="true">&times;</span>
             </button>
-            
+            <div>
+                <h2>{{spell.name}}</h2>
+            </div>
+            <div>
+                <h5>
+                    <b>School:</b> {{spell.school}} <span ng-show="s.descriptor">[{{spell.descriptor}}]</span>
+                </h5>
+                <h5><b>Level:</b> {{spell.spell_level}}</h5>
+            </div>
+            <div class="section-header ">
+                <h5>CASTING</h5>
+            </div>
+            <div>
+                <h5><b>Casting Time: </b>{{spell.casting_time}}</h5>
+                <h5><b>Components: </b>{{spell.component}}</h5>
+            </div>
+            <div class="section-header ">
+                <h5>EFFECT</h5>
+            </div>
+            <div>
+                <h5><b>Range: </b>{{spell.range}}</h5>
+                <h5><b>Effect: </b>{{spell.effect}}</h5>
+                <h5><b>Duration: </b>{{spell.duration}}</h5>
+                <h5><b>Saving Throw: </b>{{spell.saving_throw}}</h5>
+            </div>
+            <div class="section-header ">
+                <h5>DESCRIPTION</h5>
+            </div>
+            <div>
+                <h5>{{spell.description}}</h5>
+            </div>
         </div>
     </div>
 </div>
