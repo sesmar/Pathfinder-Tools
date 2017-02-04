@@ -1429,59 +1429,59 @@ h6 {
     color: #cacaca; }
 
 h1 {
-  font-size: 1.5rem;
-  line-height: 1.4;
-  margin-top: 0;
-  margin-bottom: 0.5rem; }
-
-h2 {
   font-size: 1.25rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
+h2 {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 0.5rem; }
+
 h3 {
-  font-size: 1.1875rem;
+  font-size: 0.8125rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
 h4 {
-  font-size: 1.125rem;
+  font-size: 0.75rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
 h5 {
-  font-size: 1.0625rem;
+  font-size: 0.6875rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
 h6 {
-  font-size: 1rem;
+  font-size: 0.625rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
 @media print, screen and (min-width: 40em) {
   h1 {
-    font-size: 3rem; }
-
-  h2 {
-    font-size: 2.5rem; }
-
-  h3 {
-    font-size: 1.9375rem; }
-
-  h4 {
-    font-size: 1.5625rem; }
-
-  h5 {
     font-size: 1.25rem; }
 
+  h2 {
+    font-size: 1rem; }
+
+  h3 {
+    font-size: 0.6875rem; }
+
+  h4 {
+    font-size: 0.8125rem; }
+
+  h5 {
+    font-size: 0.75rem; }
+
   h6 {
-    font-size: 1rem; } }
+    font-size: 0.6875rem; } }
 a {
   line-height: inherit;
   color: #1779ba;
@@ -1496,7 +1496,7 @@ hr {
   clear: both;
   max-width: 75rem;
   height: 0;
-  margin: 1.25rem auto;
+  margin: 0.5rem auto;
   border-top: 0;
   border-right: 0;
   border-bottom: 1px solid #cacaca;
@@ -1983,14 +1983,14 @@ select {
     .button.hollow, .button.hollow:hover, .button.hollow:focus {
       background-color: transparent; }
     .button.hollow:hover, .button.hollow:focus {
-      border-color: #0c3c5d;
-      color: #0c3c5d; }
+      border-color: #0c3d5d;
+      color: #0c3d5d; }
     .button.hollow.primary {
       border: 1px solid #1779ba;
       color: #1779ba; }
       .button.hollow.primary:hover, .button.hollow.primary:focus {
-        border-color: #0c3c5d;
-        color: #0c3c5d; }
+        border-color: #0c3d5d;
+        color: #0c3d5d; }
     .button.hollow.secondary {
       border: 1px solid #767676;
       color: #767676; }
@@ -3969,7 +3969,7 @@ div.loading img {
 
 div.spell {
   background-color: #ECE5B3;
-  border: 1px solid #003A26;
+  border: 1px solid #3E0900;
   margin-bottom: 1rem;
   position: relative; }
   div.spell div {
@@ -3982,7 +3982,7 @@ div.spell {
     margin: 0; }
   div.spell div.heading {
     margin-top: 0;
-    background-color: #003A26;
+    background-color: #3E0900;
     color: #ECE5B3;
     text-transform: uppercase; }
     div.spell div.heading p {
