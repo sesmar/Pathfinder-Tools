@@ -1,6 +1,6 @@
-@import '../../node_modules/foundation-sites/scss/settings/_settings';
+@import '../scss/foundation/settings/_settings';
 @import '../scss/_site_settings';
-@import '../../node_modules/foundation-sites/scss/foundation';
+@import '../scss/foundation/foundation';
 @include foundation-everything;
 @import '../scss/bestiary';
 @import '../scss/spells';
