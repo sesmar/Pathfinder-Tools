@@ -39,12 +39,11 @@ module.exports = function(app) {
     }
 
     function queryDatabase(res, findParams) {
-        console.log(findParams);
+        //console.log(findParams);
 
         Spell.find(findParams,
             null, { sort: { name: 1 } },
             function(err, spells) {
-
                 // if there is an error retrieving, send the error. nothing after res.send(err) will execute
                 if (err)
                     res.send(err)

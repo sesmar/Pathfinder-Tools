@@ -3,7 +3,6 @@
     "version": "1.0.0",
     "description": "Helper tools for creating campaigns for pathfinder",
     "main": "server.js",
-    "engines": { "node": "6.7.0" },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
